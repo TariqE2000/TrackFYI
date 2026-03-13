@@ -12,7 +12,9 @@ import java.util.UUID;
 public interface ApplicationRepository extends JpaRepository<ApplicationModel, UUID> {
 
     List<ApplicationModel> findByStatus(Status status);
+
     List<ApplicationModel> findByCompany(String company);
+
     List<ApplicationModel> findByRecruiterEmail(String email);
 
 }
