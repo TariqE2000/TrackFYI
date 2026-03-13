@@ -37,7 +37,17 @@ public class ApplicationService {
         return applicationRepository.findAll();
     }
 
-    // TODO: Updating application needs to be added
-    // TODO: Deleting application needs to be added With adding Applications as well
+    public ApplicationModel updateApplication(ApplicationModel application) {
+        return applicationRepository.save(application);
+
+    }
+
+    public ApplicationModel addApplication(ApplicationModel applicationModel) {
+        return applicationRepository.save(applicationModel);
+    }
+
+    public void deleteApplication(UUID id) {
+        applicationRepository.deleteById(id);
+    }
 
 }
