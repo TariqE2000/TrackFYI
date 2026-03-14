@@ -35,24 +35,24 @@ public class ApplicationModel {
     private String recruiterEmail;
 
     @PrePersist
-    public void setDefaultValues(){
-        if(dateApplied == null){
+    public void setDefaultValues() {
+        if (dateApplied == null) {
             dateApplied = LocalDate.now();
         }
 
-        if(company == null){
+        if (company == null) {
             company = "None";
         }
-        if(role == null){
+        if (role == null) {
             role = "None";
         }
-        if(status == null){
+        if (status == null) {
             status = Status.NONE;
         }
-        if(recruiterName == null){
+        if (recruiterName == null) {
             recruiterName = "None";
         }
-        if(recruiterEmail == null){
+        if (recruiterEmail == null) {
             recruiterEmail = "recruiter@comany.com";
         }
     }

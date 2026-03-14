@@ -28,6 +28,7 @@ public class ApplicationController {
     public Optional<ApplicationModel> getApplication(@PathVariable UUID id) {
         return applicationService.getApplicationById(id);
     }
+
     @PostMapping()
     public ApplicationModel addApplication(@RequestBody ApplicationModel application) {
         return applicationService.addApplication(application);
@@ -35,8 +36,7 @@ public class ApplicationController {
 
     @PutMapping()
     public ApplicationModel updateApplication(@RequestBody ApplicationModel application) {
-        Optional<ApplicationModel> oldApplication =
-                applicationService.getApplicationById(application.getId());
+        Optional<ApplicationModel> oldApplication = applicationService.getApplicationById(application.getId());
 
         if (oldApplication.isEmpty()) {
             throw new RuntimeException("Application not found");
@@ -44,25 +44,29 @@ public class ApplicationController {
 
         return applicationService.updateApplication(application);
     }
+
     @DeleteMapping("/{id}")
-    public void deleteApplication(@PathVariable UUID id){
+    public void deleteApplication(@PathVariable UUID id) {
         Optional<ApplicationModel> application = applicationService.getApplicationById(id);
 
-        if(application.isEmpty()){
+        if (application.isEmpty()) {
             throw new RuntimeException("Application not found");
         }
         applicationService.deleteApplication(id);
     }
+
     @GetMapping("/company/{company}")
-    public List<ApplicationModel> getApplicationsByCompanyName(@PathVariable String company){
+    public List<ApplicationModel> getApplicationsByCompanyName(@PathVariable String company) {
         return applicationService.getApplicationByCompany(company);
     }
+
     @GetMapping("/email/{email}")
-    public List<ApplicationModel> getApplicationsByRecruiterEmail(@PathVariable String email){
+    public List<ApplicationModel> getApplicationsByRecruiterEmail(@PathVariable String email) {
         return applicationService.getApplicationByRecruiterEmail(email);
     }
+
     @GetMapping("/status/{status}")
-    public List<ApplicationModel> getApplicationsByStatusName(@PathVariable Status status){
+    public List<ApplicationModel> getApplicationsByStatusName(@PathVariable Status status) {
         return applicationService.getApplicationByStatus(status);
     }
 }
