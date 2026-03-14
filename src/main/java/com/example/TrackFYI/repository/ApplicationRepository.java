@@ -1,7 +1,7 @@
-package repository;
+package com.example.TrackFYI.repository;
 
-import model.ApplicationModel;
-import model.Status;
+import com.example.TrackFYI.model.ApplicationModel;
+import com.example.TrackFYI.model.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

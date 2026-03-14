@@ -1,9 +1,9 @@
-package service;
+package com.example.TrackFYI.service;
 
-import model.ApplicationModel;
-import model.Status;
+import com.example.TrackFYI.model.ApplicationModel;
+import com.example.TrackFYI.model.Status;
 import org.springframework.stereotype.Service;
-import repository.ApplicationRepository;
+import com.example.TrackFYI.repository.ApplicationRepository;
 
 import java.util.List;
 import java.util.Optional;
