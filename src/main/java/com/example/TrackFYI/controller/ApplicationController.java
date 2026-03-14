@@ -53,7 +53,6 @@ public class ApplicationController {
         }
         applicationService.deleteApplication(id);
     }
-    // TODO: might need to change the path variable to first character to be upper case
     @GetMapping("/company/{company}")
     public List<ApplicationModel> getApplicationsByCompanyName(@PathVariable String company){
         return applicationService.getApplicationByCompany(company);
