@@ -1,5 +1,0 @@
-@layer components{
-    .card-label {
-        @apply text-sm font-medium tracking-wide text-zinc-400;
-    }
-}
