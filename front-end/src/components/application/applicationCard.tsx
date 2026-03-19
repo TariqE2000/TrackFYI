@@ -1,5 +1,5 @@
-import { CompanyLogo } from "@/components/application/CompanyLogo"
-import { Badge } from "@/components/ui/badge"
+import { CompanyLogo } from "./CompanyLogo"
+import { Badge } from "../ui/badge"
 
 export default function ApplicationCard() {
   return (
