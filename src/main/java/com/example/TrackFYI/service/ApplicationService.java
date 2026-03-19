@@ -1,0 +1,53 @@
+package com.example.TrackFYI.service;
+
+import com.example.TrackFYI.model.ApplicationModel;
+import com.example.TrackFYI.model.Status;
+import org.springframework.stereotype.Service;
+import com.example.TrackFYI.repository.ApplicationRepository;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+@Service
+public class ApplicationService {
+    private final ApplicationRepository applicationRepository;
+
+    public ApplicationService(ApplicationRepository applicationRepository) {
+        this.applicationRepository = applicationRepository;
+    }
+
+    public Optional<ApplicationModel> getApplicationById(UUID id) {
+        return applicationRepository.findById(id);
+    }
+
+    public List<ApplicationModel> getApplicationByStatus(Status status) {
+        return applicationRepository.findByStatus(status);
+    }
+
+    public List<ApplicationModel> getApplicationByRecruiterEmail(String email) {
+        return applicationRepository.findByRecruiterEmail(email);
+    }
+
+    public List<ApplicationModel> getApplicationByCompany(String companyName) {
+        return applicationRepository.findByCompany(companyName);
+    }
+
+    public List<ApplicationModel> getApplications() {
+        return applicationRepository.findAll();
+    }
+
+    public ApplicationModel updateApplication(ApplicationModel application) {
+        return applicationRepository.save(application);
+
+    }
+
+    public ApplicationModel addApplication(ApplicationModel applicationModel) {
+        return applicationRepository.save(applicationModel);
+    }
+
+    public void deleteApplication(UUID id) {
+        applicationRepository.deleteById(id);
+    }
+
+}
