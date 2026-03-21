@@ -1,0 +1,5 @@
+@layer components{
+    .card-label{
+        @apply text-xs font-medium uppercase tracking-wide text-zinc-400;
+    }
+}
